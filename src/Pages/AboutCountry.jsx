@@ -41,9 +41,8 @@ const AboutCountry = () => {
                 <p>Capital: {country.capital}</p>
                 <div>
                     <p>Languages: {
-            Object.entries(country.languages).map(([key, value]) => (
-              <span key={key}>{value}</span>
-            ))}
+                           Object.values(country.languages).join(', ')
+            }
                     </p>
                     <p></p>
                     <p></p>
