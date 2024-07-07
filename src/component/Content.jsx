@@ -49,7 +49,7 @@ function Content() {
         <div className="main-content">
           {countries.map((country) => (
             <Link
-              to={`/aboutcountry/${country.name.common}`}
+              to={`/aboutcountry/${country.cca3}`}
               key={country.cca3}
               style={{ textDecoration: 'none' }}
               className="country-card"

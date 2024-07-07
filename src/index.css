@@ -45,7 +45,7 @@ form{
   align-items: center;
 }
 
-.content, .main-content{
+.content, .main-content, .country-container{
   width: 85%;
   margin: 0 auto;
   padding: 19px 0;
