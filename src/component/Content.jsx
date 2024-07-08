@@ -13,10 +13,9 @@ function Content() {
   const userInput = (e)=>{
     e.preventDefault()
     const userSearch = (e.target.value);
-    console.log(userSearch);
     setSearchCountry(userSearch)
   }
-
+  
   async function allCountries () {
     try {
       const res = await fetch(API_ENDPOINT)
@@ -36,7 +35,7 @@ function Content() {
     <>
       <main>
         <div className="content">
-          <form action="" method="post">
+          <form  action="" method="post">
             <div className="form-container">
               <div className="input-container">
                 <input
@@ -62,7 +61,7 @@ function Content() {
         <div className="main-content">
           {countries.map((country) => (
             <Link
-              to={`/aboutcountry/${country.name.common}`} 
+              to={`/country-details/${country.name.common}`} 
               key={country.cca3}
               style={{ textDecoration: 'none' }}
               className="country-card"
@@ -86,5 +85,4 @@ let style = {
   padding: '.2rem .4rem',
   color: 'hsl(200, 15%, 8%)',
   fontWeight: 600,
-
 }

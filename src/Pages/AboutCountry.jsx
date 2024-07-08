@@ -22,13 +22,12 @@ const AboutCountry = () => {
   console.log(id);
   const [country, setCountry] = useState(null);
 
-
   useEffect(() => {
     async function fetchCountry() {
       try {
         const res = await fetch(`https://restcountries.com/v3.1/name/${id}`);
         const data = await res.json();
-        setCountry(data[0]); // data is an array with one element
+        setCountry(data[0]);
         console.log(data);
           } catch (error) {
         console.log('Error fetching country data', error);
@@ -58,7 +57,7 @@ const AboutCountry = () => {
           <FaArrowLeft color="black" />
             Back
           </Link>
-          <div  className="country-details">
+          <div className="country-details">
             <img src={country.flags.png} alt={`${country.name.common} flag`} />
             <div>
                 <h1>{country.name.common}</h1>
@@ -71,6 +70,7 @@ const AboutCountry = () => {
                     </p>
                 </div>
                 <div>
+                    <p>Sub Region: {country.subregion}</p>
                     <p>Top Level Domain: <span>{(country.tld).map(domain => domain)}</span></p>
                     <p>Currencies: <span>{Object.values(country.currencies).map(currency => `${currency.name}`)}</span></p>
                     <p>{Object.keys(country.languages).length > 1 ? 'Languages' : 'Language'}: <span>

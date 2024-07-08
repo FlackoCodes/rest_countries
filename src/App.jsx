@@ -16,7 +16,10 @@ function App() {
     createRoutesFromElements(
       <Route path='/' element={<MainLayout/>}>
         <Route index element={<Home />}/>
-        <Route path='aboutcountry/:id' element={<AboutCountry />}/>
+        <Route path='country-details/:id' element={<AboutCountry />}/>
+         {/* ':id' acting as a placeholder for actual
+          values passed as URL params
+         */}
         <Route path="*" element={<NoteFound />} />
       </Route>
     )
