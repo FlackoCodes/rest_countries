@@ -7,7 +7,7 @@ function Content() {
     const [ countries, setCountries ] = useState([])
     const { id } = useParams()
     
-  const API_ENDPOINT = 'https://restcountries.com/v3.1/all'
+  const API_ENDPOINT = 'https://restcountries.com/v3.1/all?'
 
   async function allCountries () {
     try {
@@ -49,7 +49,7 @@ function Content() {
         <div className="main-content">
           {countries.map((country) => (
             <Link
-              to={`/aboutcountry/${country.cca3}`}
+              to={`/aboutcountry/${country.name.common}`} 
               key={country.cca3}
               style={{ textDecoration: 'none' }}
               className="country-card"

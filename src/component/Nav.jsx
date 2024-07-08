@@ -1,14 +1,15 @@
+import { NavLink } from "react-router-dom"
 import { FaMoon } from "react-icons/fa"
 
 const Nav = () => {
-
-
 
   return (
     <nav>
         <div className="container">
             <div>
+                <NavLink className='nav-link' to={'/'} >
                 <h2>Where in the world?</h2>
+                </ NavLink >
             </div>
             <div
             style={style}>

@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { useParams, Link } from "react-router-dom";
+
 const AboutCountry = () => {
-  const { id } = useParams();
+  const { id } = useParams();  // id --> actual value of the URL parameter
+  console.log(id);
   const [country, setCountry] = useState(null);
 
   useEffect(() => {
     async function fetchCountry() {
       try {
-        const res = await fetch(`https://restcountries.com/v3.1/alpha/${id}`);
+        const res = await fetch(`https://restcountries.com/v3.1/name/${id}`);
         const data = await res.json();
         setCountry(data[0]); // data is an array with one element
         console.log(data);
@@ -40,9 +42,9 @@ const AboutCountry = () => {
                 <p>Region: {country.region}</p>
                 <p>Capital: {country.capital}</p>
                 <div>
-                    <p>Languages: {
+                    <p>{country.languages.length > 1 ? 'Languages' : 'Language'}: {
                            Object.values(country.languages).join(', ')
-            }
+                            }
                     </p>
                     <p></p>
                     <p></p>

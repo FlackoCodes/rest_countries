@@ -17,11 +17,20 @@ body{
 
 nav{
   font-weight: 600;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+nav h2, nav h3{
+  font-size: 1rem;
+  font-weight: 600;
+}
 img{
   max-width: 100%;
+}
+
+.nav-link{
+  text-decoration: none;
+  color: hsl(200, 15%, 8%);
 }
 
 .container{
@@ -118,6 +127,9 @@ span{
 }
 
 @media screen and (min-width: 768px) {
+  nav h2, nav h3{
+    font-size: 1.4rem;
+  }
   select{
     padding: .8rem 1.8rem;
     margin-top: 0;

@@ -23,11 +23,7 @@ function App() {
   )
 
   return (
-    // <>
-    //  <Nav />
-    //  <Content />
-    // </>
-     <RouterProvider router={router} />
+         <RouterProvider router={router} />
   )
 }
 
