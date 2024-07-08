@@ -5,9 +5,17 @@ import { Link, useParams } from "react-router-dom"
 function Content() {
 
     const [ countries, setCountries ] = useState([])
+    const [ searchCountry, setSearchCountry ] = useState('')
     const { id } = useParams()
     
   const API_ENDPOINT = 'https://restcountries.com/v3.1/all?'
+
+  const userInput = (e)=>{
+    e.preventDefault()
+    const userSearch = (e.target.value);
+    console.log(userSearch);
+    setSearchCountry(userSearch)
+  }
 
   async function allCountries () {
     try {
@@ -28,10 +36,15 @@ function Content() {
     <>
       <main>
         <div className="content">
-          <form action="" method="get">
+          <form action="" method="post">
             <div className="form-container">
               <div className="input-container">
-                <input type="text" placeholder="Search for a country" />
+                <input
+                 type="text"
+                 placeholder="Search for a country"
+                 value={searchCountry} 
+                 onChange={userInput}
+                  />
                 <FaSearch className="search-icon" />
               </div>
             </div>

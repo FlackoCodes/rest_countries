@@ -1,11 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState  } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { useParams, Link } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
+
+const override= {
+  display: "block",
+  textAlign: "center",
+  margin: "0 auto",
+  borderColor: "lightgrey",
+};
+
+const loaderContainerStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  height: '100vh',
+};
 
 const AboutCountry = () => {
   const { id } = useParams();  // id --> actual value of the URL parameter
   console.log(id);
   const [country, setCountry] = useState(null);
+
 
   useEffect(() => {
     async function fetchCountry() {
@@ -22,7 +38,16 @@ const AboutCountry = () => {
     fetchCountry();
   }, [id]);
 
-  if (!country) return <div>Loading...</div>;
+  if (!country) return <div
+   style={loaderContainerStyle}>
+    <ClipLoader
+    color='blue'
+    cssOverride={override}
+    size={150}
+    aria-label="Loading Spinner"
+    data-testid="loader"
+    />;
+  </div>
 
   return (
     <>
@@ -33,24 +58,28 @@ const AboutCountry = () => {
           <FaArrowLeft color="black" />
             Back
           </Link>
-          <div style={{display:'flex', gap: '1rem'}}>
+          <div  className="country-details">
             <img src={country.flags.png} alt={`${country.name.common} flag`} />
             <div>
                 <h1>{country.name.common}</h1>
-                <h1>{country.languages.nativeName}</h1>
-                <p>Population: {country.population.toLocaleString()}</p>
-                <p>Region: {country.region}</p>
-                <p>Capital: {country.capital}</p>
-                <div>
-                    <p>{country.languages.length > 1 ? 'Languages' : 'Language'}: {
-                           Object.values(country.languages).join(', ')
-                            }
+                <p>Native Name: <span>{Object.values(country.name.nativeName)[0].common}</span></p>
+                <p>Population: <span>{country.population.toLocaleString()}</span></p>
+                <p>Region: <span>{country.region}</span></p>
+                <p>Capital: <span>{country.capital}</span></p>
+                <p className="borders">
+                      Border Countries: <span>{ country.borders ? (country.borders).join(', ') : "no border countries"}</span>
                     </p>
-                    <p></p>
-                    <p></p>
                 </div>
-            </div>
-
+                <div>
+                    <p>Top Level Domain: <span>{(country.tld).map(domain => domain)}</span></p>
+                    <p>Currencies: <span>{Object.values(country.currencies).map(currency => `${currency.name}`)}</span></p>
+                    <p>{Object.keys(country.languages).length > 1 ? 'Languages' : 'Language'}: <span>
+                      {
+                             Object.values(country.languages).join(', ')
+                              }
+                    </span>
+                    </p>
+                </div>       
           </div>
     </div>
     </>

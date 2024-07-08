@@ -126,7 +126,40 @@ span{
   font-weight: 300;
 }
 
+.country-details{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.country-details h1, .country-details p{
+  color: hsl(200, 15%, 8%);
+  font-weight: 700;
+}
+
+.country-details p{
+  padding: 0.1rem 0;
+}
+
+.country-details span{
+  font-weight: 300;
+}
+
 @media screen and (min-width: 768px) {
+  .country-details{
+    flex-direction: row;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  .country-details h1{
+    margin-bottom: 20px;
+  }
+
+  .borders{
+    margin-top: 50px;
+  }
+
   nav h2, nav h3{
     font-size: 1.4rem;
   }
