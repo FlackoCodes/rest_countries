@@ -19,7 +19,6 @@ const loaderContainerStyle = {
 
 const AboutCountry = () => {
   const { id } = useParams();  // id --> actual value of the URL parameter
-  console.log(id);
   const [country, setCountry] = useState(null);
 
   useEffect(() => {
@@ -28,7 +27,6 @@ const AboutCountry = () => {
         const res = await fetch(`https://restcountries.com/v3.1/name/${id}`);
         const data = await res.json();
         setCountry(data[0]);
-        console.log(data);
           } catch (error) {
         console.log('Error fetching country data', error);
       }
