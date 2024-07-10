@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 function Content() {
   const [countries, setCountries] = useState([]);
   const [searchCountry, setSearchCountry] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState('');
 
   const API_ENDPOINT = 'https://restcountries.com/v3.1/all';
 
@@ -31,6 +32,8 @@ function Content() {
   const filteredCountries = countries.filter(country =>
     (country.name.common).toLowerCase().includes(searchCountry.toLowerCase())
   );
+
+
   return (
     <>
       <main>
@@ -48,7 +51,8 @@ function Content() {
               </div>
             </div>
             <div>
-              <select name="" id="">
+              <select>
+                <option value="" disabled>Select Region</option>
                 <option>Africa</option>
                 <option>America</option>
                 <option>Asia</option>
