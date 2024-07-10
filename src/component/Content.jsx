@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 function Content() {
   const [countries, setCountries] = useState([]);
   const [searchCountry, setSearchCountry] = useState('');
-  const [selectedRegion, setSelectedRegion] = useState('');
 
   const API_ENDPOINT = 'https://restcountries.com/v3.1/all';
 

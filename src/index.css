@@ -148,15 +148,15 @@ span{
   .country-details{
     flex-direction: row;
     align-items: center;
-    gap: 5rem;
+    gap: 2rem;
   }
 
   .country-details h1{
-    margin-bottom: 20px;
+    margin-bottom: 20px 0;
   }
 
   .borders{
-    margin-top: 50px;
+    margin-top: 40px;
   }
 
   nav h2, nav h3{
@@ -183,6 +183,10 @@ span{
 }
 
 @media screen and (min-width: 1024px) {
+  .country-details{
+    gap: 5rem;
+    }
+
   .main-content{
     display: grid;
     grid-template-columns: repeat(4, 1fr);

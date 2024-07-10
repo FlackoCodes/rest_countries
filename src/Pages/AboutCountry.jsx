@@ -70,7 +70,7 @@ const AboutCountry = () => {
                     </p>
                 </div>
                 <div>
-                    <p>Sub Region: {country.subregion}</p>
+                    <p>Sub Region: <span>{country.subregion}</span></p>
                     <p>Top Level Domain: <span>{(country.tld).map(domain => domain)}</span></p>
                     <p>Currencies: <span>{Object.values(country.currencies).map(currency => `${currency.name}`)}</span></p>
                     <p>{Object.keys(country.languages).length > 1 ? 'Languages' : 'Language'}: <span>
