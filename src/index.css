@@ -42,9 +42,6 @@ img{
   padding: 19px 0;
 }
 
-main{
-  background-color: hsl(0, 0%, 95%);
-}
 
 form{
   padding: 2rem 0;
@@ -70,6 +67,7 @@ form{
   border: none;
   background: hsl(0, 0%, 100%);
   outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
 }
 
 
@@ -110,6 +108,7 @@ select{
   background: white;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
 }
 
 .country-card img{
