@@ -7,7 +7,7 @@ const Nav = () => {
     <nav>
         <div className="container">
             <div>
-                <NavLink className='nav-link' to={'/'} >
+                <NavLink  className='nav-link' to={'/'} >
                 <h2>Where in the world?</h2>
                 </ NavLink >
             </div>

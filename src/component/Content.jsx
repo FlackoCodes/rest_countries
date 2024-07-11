@@ -51,7 +51,6 @@ function Content() {
             </div>
             <div>
               <select>
-                <option value="" disabled>Select Region</option>
                 <option>Africa</option>
                 <option>America</option>
                 <option>Asia</option>

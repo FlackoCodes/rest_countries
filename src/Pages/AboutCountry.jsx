@@ -73,8 +73,8 @@ const AboutCountry = () => {
                     <p>Currencies: <span>{Object.values(country.currencies).map(currency => `${currency.name}`)}</span></p>
                     <p>{Object.keys(country.languages).length > 1 ? 'Languages' : 'Language'}: <span>
                       {
-                             Object.values(country.languages).join(', ')
-                              }
+                        Object.values(country.languages).join(', ')
+                      }
                     </span>
                     </p>
                 </div>       
