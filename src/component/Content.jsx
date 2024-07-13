@@ -83,12 +83,12 @@ function Content() {
             </div>
             <div>
               <select value={selectedRegion} onChange={handleRegionSelect}>
-                <option>All</option>
-                <option>Africa</option>
-                <option>Americas</option>
-                <option>Asia</option>
-                <option>Europe</option>
-                <option>Oceania</option>
+                <option value="All">All</option>
+                <option value="Africa">Africa</option>
+                <option value="Americas">Americas</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
               </select>
             </div>
           </form>
