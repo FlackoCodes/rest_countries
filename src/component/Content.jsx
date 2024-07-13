@@ -6,11 +6,16 @@ import { ClipLoader } from "react-spinners";
 function Content() {
   const [countries, setCountries] = useState([]);
   const [searchCountry, setSearchCountry] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState('All');
 
   const API_ENDPOINT = 'https://restcountries.com/v3.1/all';
 
   const handleSearchInput = (e) => {
     setSearchCountry(e.target.value);
+  };
+
+  const handleRegionSelect = (e) => {
+    setSelectedRegion(e.target.value);
   };
 
   async function fetchAllCountries() {
@@ -44,7 +49,8 @@ function Content() {
   
   // Filter countries based on the search input
   const filteredCountries = countries.filter(country =>
-    (country.name.common).toLowerCase().includes(searchCountry.toLowerCase())
+    (country.name.common).toLowerCase().includes(searchCountry.toLowerCase())&&
+    (selectedRegion === 'All' || country.region === selectedRegion)
   );
 
   
@@ -76,9 +82,10 @@ function Content() {
               </div>
             </div>
             <div>
-              <select>
+              <select value={selectedRegion} onChange={handleRegionSelect}>
+                <option>All</option>
                 <option>Africa</option>
-                <option>America</option>
+                <option>Americas</option>
                 <option>Asia</option>
                 <option>Europe</option>
                 <option>Oceania</option>
