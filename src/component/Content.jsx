@@ -1,7 +1,7 @@
-// 
 import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
 
 function Content() {
   const [countries, setCountries] = useState([]);
@@ -27,11 +27,37 @@ function Content() {
     fetchAllCountries();
   }, []);
 
+  const override= {
+    display: "block",
+    textAlign: "center",
+    margin: "0 auto",
+    borderColor: "lightgrey",
+  };
+  
+  const loaderContainerStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+  };
+
+  
   // Filter countries based on the search input
   const filteredCountries = countries.filter(country =>
     (country.name.common).toLowerCase().includes(searchCountry.toLowerCase())
   );
 
+  
+  if (!countries) return <div
+   style={loaderContainerStyle}>
+    <ClipLoader
+    color='blue'
+    cssOverride={override}
+    size={150}
+    aria-label="Loading Spinner"
+    data-testid="loader"
+    />;
+  </div>
 
   return (
     <>
