@@ -51,8 +51,9 @@ const AboutCountry = () => {
     <div className="country-container">
           <Link 
           style={linkStyle}
+          className="inline-flex items-center gap-4 rounded-md bg-white text-black"
           to='/'>
-          <FaArrowLeft color="black" />
+          <FaArrowLeft color="darkgrey" />
             Back
           </Link>
           <div className="country-details">
@@ -87,12 +88,6 @@ const AboutCountry = () => {
 export default AboutCountry;
 
 let linkStyle = {
-    display: 'inline-flex',
-    alignItems: 'center',
-    gap: '1rem',
-    backgroundColor: 'white',
-    borderRadius: '5px',
-    color: 'black',
     textDecoration: 'none',
     boxShadow: '2px 4px 8px rgba(0, 0, 0, 0.1)',
     padding: '.4rem 1rem',
