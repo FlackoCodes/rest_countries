@@ -48,10 +48,9 @@ const AboutCountry = () => {
 
   return (
     <>
-    <div className="country-container">
+    <div className="country-container dark:bg-black">
           <Link 
-          style={linkStyle}
-          className="inline-flex items-center gap-4 rounded-md bg-white text-black"
+          className="inline-flex items-center gap-4 rounded-md bg-white text-black my-8 mx-0 decoration-0 shadow-custom px-4 py-2"
           to='/'>
           <FaArrowLeft color="darkgrey" />
             Back
@@ -87,9 +86,4 @@ const AboutCountry = () => {
 
 export default AboutCountry;
 
-let linkStyle = {
-    textDecoration: 'none',
-    boxShadow: '2px 4px 8px rgba(0, 0, 0, 0.1)',
-    padding: '.4rem 1rem',
-    margin: '30px 0'
-}
+

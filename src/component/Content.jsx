@@ -43,7 +43,7 @@ function Content() {
 
   return (
     <>
-      <main>
+      <main className="dark:bg-black">
         <div className="content">
           <form action="" method="get">
             <div className="form-container">
@@ -74,8 +74,7 @@ function Content() {
             <Link
               to={`/country-details/${country.name.common}`}
               key={country.cca3}
-              style={{ textDecoration: 'none' }}
-              className="country-card"
+              className="country-card decoration-0"
             >
               <img src={country.flags.png} alt={`${country.name.common} flag`} />
               <h2>{country.name.common}</h2>
